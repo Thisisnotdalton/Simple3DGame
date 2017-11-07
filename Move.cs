@@ -27,19 +27,24 @@ public class Move : MonoBehaviour {
 
         if (moveRight)
         {
-            newPosition = newPosition + new Vector3(speed * Time.deltaTime, 0, 0);
+            //newPosition = newPosition + new Vector3(speed * Time.deltaTime, 0, 0);
+            // = assignment operator
+            // + addition operator
+            // += increment operator
+            newPosition += new Vector3(speed * Time.deltaTime, 0, 0);
         }
         if (moveLeft)
         {
-            newPosition = newPosition - new Vector3(speed * Time.deltaTime, 0, 0);
+            // -= decrement operator
+            newPosition -= new Vector3(speed * Time.deltaTime, 0, 0);
         }
         if (moveUp)
         {
-            newPosition = newPosition + new Vector3(0, speed * Time.deltaTime, 0);
+            newPosition += new Vector3(0, speed * Time.deltaTime, 0);
         }
         if (moveDown)
         {
-            newPosition = newPosition - new Vector3(0, speed * Time.deltaTime, 0);
+            newPosition -= new Vector3(0, speed * Time.deltaTime, 0);
         }
 
         transform.position = newPosition;
