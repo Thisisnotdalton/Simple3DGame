@@ -13,9 +13,12 @@ public class Move : MonoBehaviour {
 	
 	void Update () {//called every frame of the game
         rb.MovePosition(transform.position + 
-                        new Vector3(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0) +
-                        new Vector3(0, speed * Input.GetAxis("Vertical") * Time.deltaTime, 0));
-
+                        new Vector3(Input.GetAxis("Horizontal"),
+                                    Input.GetAxis("Vertical"),
+                                    0) * speed * Time.deltaTime);
+       // rb.MovePosition(transform.position +
+       //                 (Vector3.right * Input.GetAxis("Horizontal") +
+      //                  Vector3.up * Input.GetAxis("Vertical")) * speed * Time.deltaTime);
     }
     
 }
